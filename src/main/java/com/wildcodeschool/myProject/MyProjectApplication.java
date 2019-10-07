@@ -16,23 +16,48 @@ public class MyProjectApplication {
 
     @RequestMapping("/")
     @ResponseBody
-    public String index() {
-    	return  "Greetings from <a href='https://spring.io/projects/spring-boot'>Spring Boot!</a>"
-    			+ " <ul>"
+    public String html() {
+    	return 
+    			" <ul>"
     				+ "<li>"
-    					+ "<a href='https://en.wikipedia.org/wiki/First_Doctor'>William Hartnell</a>"
+    					+ "<a href='/doctor/1'>William Hartnell</a></a>"
     				+"</li>"
     				+ "<li>"
-    				    + "<a href='https://en.wikipedia.org/wiki/Second_Doctor'>Patrick Troughton</a>"
+    				    + "<a href='/doctor/2'>Patrick Troughton</a></a>"
     				+"</li>"
     				+ "<li>"
-    				    + "<a href='https://en.wikipedia.org/wiki/Third_Doctor'>Jon Pertwee</a>"
+    				    + "<a href='/doctor/3'>Jon Pertwee</a></a>"
     				+"</li>"
     				+ "<li>"
-    				    + "<a href='https://en.wikipedia.org/wiki/Fourth_Doctor'>Tom Baker</a>"
+    				    + "<a href='/doctor/4'>Tom baker</a></a>"
     				+ "</li>"
-    			+ "</ul<";
+    			+ "</ul>";
     }
+    
+    @RequestMapping("/doctor/1")
+	@ResponseBody
+	public String doctor1() {
+		return "William Hartnell";
+	}
+    
+	@RequestMapping("/doctor/2")
+	@ResponseBody
+	public String doctor2() {
+		return "Patrick Troughton";
+	}
+	
+	@RequestMapping("/doctor/3")
+	@ResponseBody
+	public String doctor3() {
+		return "Jon Pertwee";
+	}
+	
+	@RequestMapping("/doctor/4")
+	@ResponseBody
+	public String doctor4() {
+		return "Tom baker";
+	}
+	
     
 
 }
